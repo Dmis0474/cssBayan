@@ -61,6 +61,7 @@ p {
 
 .mem__item:nth-child(n + 2) {
   color: blue;
+  
 }
 
 .mem__img {
@@ -90,12 +91,13 @@ p {
 .mem__img--fourth,
 .mem__img--fifth {
   height: 0;
-  
+ transform: scale(0);
+ transition: all ease-out 0.7s;
 }
 
-.mem__item:hover .mem__img {
-  height: auto;
-  
+.mem__item:hover > .mem__img {
+  transform: scale(1);
+  height: 100%;
 }
 
 .mem__inner:hover .mem__item:hover .mem__close--btn {
@@ -152,3 +154,4 @@ p {
     line-height: 46px;
   }
 }
+
