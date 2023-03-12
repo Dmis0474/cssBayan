@@ -7,7 +7,7 @@ body {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
-  
+
   color: #191919;
   background-color: rgb(242, 244, 229);
 }
@@ -38,10 +38,10 @@ p {
   margin-top: 50px;
   padding: 15px 5px;
   border-bottom: 1px solid grey;
-  
+  color: black;
 }
 
-.mem__item{
+.mem__item {
   padding-top: 20px;
   border-bottom: 1px solid grey;
   display: flex;
@@ -53,26 +53,68 @@ p {
   cursor: pointer;
 }
 
-.mem__header{
+.mem__header {
   font-size: 24px;
   line-height: 30px;
+  width: 80%;
 }
 
+.mem__item:nth-child(n + 2) {
+  color: blue;
+}
 
-
-.mem__img{
+.mem__img {
   width: 100%;
 }
 
-.mem__close--btn{
+.mem__close--btn {
   position: absolute;
-  top:20px;
+  top: 20px;
   right: 0;
-  /* display: none; */
+  display: none;
+}
+
+.mem__inner:hover :nth-child(n + 1) {
+  color: black;
+}
+
+.mem__inner:hover .mem__item .mem__close--btn {
+  display: block;
+}
+
+.mem__inner:hover .mem__item:nth-child(n + 2) .mem__close--btn {
+  transform: rotate(45deg);
+}
+.mem__img--second,
+.mem__img--third,
+.mem__img--fourth,
+.mem__img--fifth {
+  height: 0;
+  
+}
+
+.mem__item:hover .mem__img {
+  height: auto;
+  
+}
+
+.mem__inner:hover .mem__item:hover .mem__close--btn {
+  transform: rotateZ(90deg);
+}
+
+.mem__item:active > .mem__header:after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  z-index: 2;
 }
 
 @media (min-width: 820px) {
-
   .container {
     max-width: 800px;
     margin: 0 auto;
@@ -82,35 +124,31 @@ p {
     font-size: 40px;
     line-height: 50px;
   }
-  .mem__img{
+  .mem__img {
     width: 50%;
     margin: 0 auto;
   }
-  .mem__header{
+  .mem__header {
     font-size: 34px;
     line-height: 42px;
   }
-
 }
 
 @media (min-width: 1200px) {
-
   .container {
     max-width: 1200px;
-  
   }
 
   .header {
     font-size: 50px;
     line-height: 60px;
   }
-  .mem__img{
+  .mem__img {
     width: 50%;
     margin: 0 auto;
   }
-  .mem__header{
+  .mem__header {
     font-size: 38px;
     line-height: 46px;
   }
-
 }
