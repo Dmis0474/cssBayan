@@ -1,0 +1,157 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+
+  color: #191919;
+  background-color: rgb(242, 244, 229);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.header {
+  font-size: 30px;
+  line-height: 36px;
+  margin-top: 50px;
+  padding: 15px 5px;
+  border-bottom: 1px solid grey;
+  color: black;
+}
+
+.mem__item {
+  padding-top: 20px;
+  border-bottom: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.mem__header {
+  font-size: 24px;
+  line-height: 30px;
+  width: 80%;
+}
+
+.mem__item:nth-child(n + 2) {
+  color: blue;
+  
+}
+
+.mem__img {
+  width: 100%;
+}
+
+.mem__close--btn {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  display: none;
+}
+
+.mem__inner:hover :nth-child(n + 1) {
+  color: black;
+}
+
+.mem__inner:hover .mem__item .mem__close--btn {
+  display: block;
+}
+
+.mem__inner:hover .mem__item:nth-child(n + 2) .mem__close--btn {
+  transform: rotate(45deg);
+}
+.mem__img--second,
+.mem__img--third,
+.mem__img--fourth,
+.mem__img--fifth {
+  height: 0;
+ transform: scale(0);
+ transition: all ease-out 0.7s;
+}
+
+.mem__item:hover > .mem__img {
+  transform: scale(1);
+  height: 100%;
+}
+
+.mem__inner:hover .mem__item:hover .mem__close--btn {
+  transform: rotateZ(90deg);
+}
+
+.mem__item:active > .mem__header:after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  z-index: 2;
+}
+
+@media (min-width: 820px) {
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .header {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .mem__img {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .mem__header {
+    font-size: 34px;
+    line-height: 42px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+
+  .header {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  .mem__img {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .mem__header {
+    font-size: 38px;
+    line-height: 46px;
+  }
+}
+
